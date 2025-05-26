@@ -10,11 +10,17 @@ return new class extends Migration
     {
         Schema::create('vehiculos', function (Blueprint $table) {
             $table->id();
+
+            // Datos del vehículo
             $table->string('marca');
             $table->string('modelo');
             $table->year('anio');
             $table->string('categoria');
-            $table->enum('estado', ['disponible', 'alquilado', 'mantenimiento'])->default('disponible');
+
+            // Estado controlado por enumeración
+            $table->enum('estado', ['Disponible', 'Alquilado', 'Mantenimiento'])->default('Disponible');
+
+            // Timestamps Laravel (created_at, updated_at)
             $table->timestamps();
         });
     }

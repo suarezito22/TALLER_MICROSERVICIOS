@@ -1,32 +1,113 @@
-<!DOCTYPE html>
+=<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Gestión de Vehículos</title>
-  <link rel="stylesheet" href="css/vehiculos.css">
-  <script src="js/vehiculos.js" defer></script>
-</head>
+  <link rel="stylesheet" href="css/vehiculos.css"> <!-- Opcional: tu CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
 
+    .container {
+      background-color: white;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    form input, form select, form button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    a.back-button {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
 <body>
 
-  <a href="index.html">
-    <button class="menu-button">Volver al Menú</button>
-  </a>
+  <a href="index.html" class="back-button">← Volver al Menú</a>
 
-  <h1>Gestión de Vehículos</h1>
+  <div class="container">
+    <h1>Gestión de Vehículos</h1>
 
-  <form id="formVehiculo">
-    <input type="text" name="marca" placeholder="Marca" required>
-    <input type="text" name="modelo" placeholder="Modelo" required>
-    <input type="number" name="anio" placeholder="Año" required>
-    <input type="text" name="categoria" placeholder="Categoría" required>
-    <select name="estado" required>
-      <option value="disponible">Disponible</option>
-      <option value="alquilado">Alquilado</option>
-      <option value="mantenimiento">Mantenimiento</option>
-    </select>
-    <button type="submit">Registrar Vehículo</button>
-  </form>
+    <form id="formVehiculo">
+      <label for="marca">Marca:</label>
+      <input type="text" name="marca" id="marca" required>
+
+      <label for="modelo">Modelo:</label>
+      <input type="text" name="modelo" id="modelo" required>
+
+      <label for="anio">Año:</label>
+      <input type="number" name="anio" id="anio" required min="1900" max="2100">
+
+      <label for="categoria">Categoría:</label>
+      <input type="text" name="categoria" id="categoria" required>
+
+      <label for="estado">Estado:</label>
+      <select name="estado" id="estado" required>
+        <option value="">Selecciona un estado</option>
+        <option value="Disponible">Disponible</option>
+        <option value="Alquilado">Alquilado</option>
+        <option value="Mantenimiento">Mantenimiento</option>
+      </select>
+
+      <button type="submit">Registrar Vehículo</button>
+    </form>
+  </div>
 
   <h2>Listado de Vehículos</h2>
   <table>
@@ -40,8 +121,11 @@
         <th>Estado</th>
       </tr>
     </thead>
-    <tbody id="tablaVehiculos"></tbody>
+    <tbody id="tablaVehiculos">
+      <!-- Aquí se insertan las filas dinámicamente -->
+    </tbody>
   </table>
 
+  <script src="js/vehiculos.js"></script>
 </body>
 </html>

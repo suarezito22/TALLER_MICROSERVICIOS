@@ -6,6 +6,7 @@ class VehiculoService {
   async listarVehiculos() {
     try {
       const res = await fetch(this.apiUrl);
+      if (!res.ok) throw new Error(`Error al obtener vehículos: ${res.status}`);
       const data = await res.json();
       return data;
     } catch (error) {
@@ -21,6 +22,12 @@ class VehiculoService {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(vehiculo)
       });
+
+      if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(`Error del servidor: ${res.status} - ${errorText}`);
+      }
+
       return await res.json();
     } catch (error) {
       console.error('Error al registrar vehículo:', error);
@@ -29,37 +36,45 @@ class VehiculoService {
   }
 }
 
-// Validación personalizada
+// ✅ Validación personalizada
 function validarVehiculo(vehiculo) {
   const errores = [];
 
-  if (!vehiculo.marca || vehiculo.marca.trim() === '') {
+  // Normalizar espacios
+  vehiculo.marca = vehiculo.marca?.trim();
+  vehiculo.modelo = vehiculo.modelo?.trim();
+  vehiculo.categoria = vehiculo.categoria?.trim();
+  vehiculo.estado = vehiculo.estado?.trim();
+  vehiculo.anio = parseInt(vehiculo.anio); // Convertir a número
+
+  if (!vehiculo.marca) {
     errores.push('La marca es obligatoria.');
   }
 
-  if (!vehiculo.modelo || vehiculo.modelo.trim() === '') {
+  if (!vehiculo.modelo) {
     errores.push('El modelo es obligatorio.');
   }
 
   if (!vehiculo.anio || isNaN(vehiculo.anio) || vehiculo.anio < 1900 || vehiculo.anio > new Date().getFullYear() + 1) {
-    errores.push('El año debe ser un número válido.');
+    errores.push('El año debe ser un número válido entre 1900 y el próximo año.');
   }
 
-  if (!vehiculo.categoria || vehiculo.categoria.trim() === '') {
+  if (!vehiculo.categoria) {
     errores.push('La categoría es obligatoria.');
   }
 
-  if (!['disponible', 'alquilado', 'mantenimiento'].includes(vehiculo.estado)) {
-    errores.push('El estado no es válido.');
+  const estadosValidos = ['Disponible', 'Alquilado', 'Mantenimiento'];
+  if (!estadosValidos.includes(vehiculo.estado)) {
+    errores.push(`El estado no es válido. Debe ser: ${estadosValidos.join(', ')}`);
   }
 
   return errores;
 }
 
-// Instancia del servicio
+// ✅ Instancia del servicio
 const servicio = new VehiculoService('http://127.0.0.1:8000/api/vehiculos');
 
-// Cargar datos en tabla
+// ✅ Cargar datos en la tabla
 async function cargarVehiculos() {
   const vehiculos = await servicio.listarVehiculos();
   const tabla = document.getElementById('tablaVehiculos');
@@ -78,12 +93,14 @@ async function cargarVehiculos() {
   });
 }
 
-// Manejar el envío del formulario
+// ✅ Manejar el envío del formulario
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('formVehiculo').addEventListener('submit', async function (e) {
     e.preventDefault();
     const datos = new FormData(this);
     const vehiculo = Object.fromEntries(datos.entries());
+
+    console.log('Datos antes de validar:', vehiculo);
 
     const errores = validarVehiculo(vehiculo);
     if (errores.length > 0) {
@@ -97,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.reset();
       cargarVehiculos();
     } catch (error) {
-      alert('Ocurrió un error al registrar el vehículo.');
+      alert('❌ Ocurrió un error al registrar el vehículo.\n' + error.message);
     }
   });
 

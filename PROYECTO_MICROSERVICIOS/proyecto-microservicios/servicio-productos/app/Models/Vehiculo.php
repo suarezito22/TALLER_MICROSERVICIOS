@@ -9,5 +9,6 @@ class Vehiculo extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['marca', 'modelo', 'anio', 'categoria'];
+    // ✅ Incluimos el campo 'estado' aquí
+    protected $fillable = ['marca', 'modelo', 'anio', 'categoria', 'estado'];
 }

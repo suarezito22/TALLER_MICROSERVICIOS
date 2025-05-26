@@ -14,17 +14,19 @@ class VehiculoController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $request->validate([
-            'marca' => 'required|string|max:255',
-            'modelo' => 'required|string|max:255',
-            'anio' => 'required|integer|min:1900|max:' . (date('Y') + 1),
-            'categoria' => 'required|string|max:255',
-        ]);
+{
+    $request->validate([
+        'marca' => 'required|string|max:255',
+        'modelo' => 'required|string|max:255',
+        'anio' => 'required|integer|min:1900|max:' . (date('Y') + 1),
+        'categoria' => 'required|string|max:255',
+        'estado' => 'required|string|max:255' // ← NUEVA línea
+    ]);
 
-        $vehiculo = Vehiculo::create($request->all());
-        return response()->json($vehiculo, Response::HTTP_CREATED);
-    }
+    $vehiculo = Vehiculo::create($request->all());
+    return response()->json($vehiculo, Response::HTTP_CREATED);
+}
+
 
     public function show($id)
     {
