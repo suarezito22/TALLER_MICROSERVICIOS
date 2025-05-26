@@ -1,6 +1,6 @@
 PARA INICIAR 
 
-1.  Cd C:\Users\byxpo\Documents\PROYECTO_MICROSERVICIOS\proyecto-microservicios
+1. cd ./PROYECTO_MICROSERVICIOS/proyecto-microservicios/servicio-productos
 
 2. php artisan serve
 
