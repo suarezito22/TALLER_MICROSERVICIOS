@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Generar Reportes</title>
+  <link rel="stylesheet" href="css/reportes.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <a href="index.html" class="back-button">← Volver al Menú</a>
+
+  <div class="container">
+    <h1>Reportes de Alquiler</h1>
+
+    <div class="filtros">
+      <label for="estado">Filtrar por Estado:</label>
+      <select id="estado">
+        <option value="todos">Todos</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="activa">Activa</option>
+        <option value="completada">Completada</option>
+        <option value="cancelada">Cancelada</option>
+      </select>
+      <button id="btnGenerar">Generar</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Cliente</th>
+          <th>Vehículo</th>
+          <th>Fecha Inicio</th>
+          <th>Fecha Fin</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody id="tablaReportes"></tbody>
+    </table>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const estadoSelect = document.getElementById('estado');
+      const tabla = document.getElementById('tablaReportes');
+      const boton = document.getElementById('btnGenerar');
+
+      boton.addEventListener('click', generarReporte);
+
+      async function generarReporte() {
+        const estado = estadoSelect.value;
+        const res = await fetch('http://127.0.0.1:8000/api/reservas');
+        const datos = await res.json();
+
+        const reservasFiltradas = estado === 'todos'
+          ? datos
+          : datos.filter(r => r.estado === estado);
+
+        tabla.innerHTML = '';
+
+        reservasFiltradas.forEach(r => {
+          const fila = document.createElement('tr');
+          fila.innerHTML = `
+            <td>${r.id}</td>
+            <td>${r.cliente?.nombre ?? 'Sin nombre'}</td>
+            <td>${r.vehiculo?.marca ?? ''} ${r.vehiculo?.modelo ?? ''}</td>
+            <td>${r.fecha_inicio}</td>
+            <td>${r.fecha_fin}</td>
+            <td>${r.estado}</td>
+          `;
+          tabla.appendChild(fila);
+        });
+
+        if (reservasFiltradas.length === 0) {
+          const fila = document.createElement('tr');
+          fila.innerHTML = `<td colspan="6" style="text-align:center;">No hay resultados</td>`;
+          tabla.appendChild(fila);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

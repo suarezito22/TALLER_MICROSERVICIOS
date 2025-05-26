@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Clientes</title>
+  <link rel="stylesheet" href="css/vehiculos.css">
+  <script src="js/clientes.js" defer></script>
+</head>
+<body>
+
+  <a href="index.html" class="menu-btn">Volver al Menú</a>
+
+  <h1>Gestión de Clientes</h1>
+
+  <form id="formCliente">
+    <input type="text" name="nombre" placeholder="Nombre completo" required>
+    <input type="text" name="contacto" placeholder="Número de contacto" required>
+    <input type="text" name="licencia" placeholder="Licencia de conducción" required>
+    <input type="text" name="documento" placeholder="Documento de identidad" required>
+    <input type="email" name="email" placeholder="Correo electrónico (opcional)">
+    <button type="submit">Registrar Cliente</button>
+  </form>
+
+  <h2>Listado de Clientes</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Contacto</th>
+        <th>Licencia</th>
+        <th>Documento</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody id="tablaClientes"></tbody>
+  </table>
+
+</body>
+</html>

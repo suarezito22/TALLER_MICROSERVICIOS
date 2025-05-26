@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Reservas</title>
+  <link rel="stylesheet" href="css/reservas.css">
+  <script src="js/reservas.js" defer></script>
+</head>
+<body>
+
+  <a href="index.html" class="back-button">← Volver al Menú</a>
+
+  <div class="container">
+    <h1>Gestión de Reservas</h1>
+
+    <form id="formReserva">
+      <label for="cliente_id">Cliente:</label>
+      <select name="cliente_id" id="cliente_id" required>
+        <option value="">Selecciona un cliente</option>
+      </select>
+
+      <label for="vehiculo_id">Vehículo:</label>
+      <select name="vehiculo_id" id="vehiculo_id" required>
+        <option value="">Selecciona un vehículo</option>
+      </select>
+
+      <label for="fecha_inicio">Fecha Inicio:</label>
+      <input type="date" name="fecha_inicio" required>
+
+      <label for="fecha_fin">Fecha Fin:</label>
+      <input type="date" name="fecha_fin" required>
+
+      <button type="submit">Registrar Reserva</button>
+    </form>
+  </div>
+
+  <h2>Listado de Reservas</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Cliente</th>
+        <th>Vehículo</th>
+        <th>Fecha Inicio</th>
+        <th>Fecha Fin</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody id="tablaReservas"></tbody>
+  </table>
+
+</body>
+</html>

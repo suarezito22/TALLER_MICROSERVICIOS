@@ -1,0 +1,60 @@
+/* Archivo: public/css/menu.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  height: 100vh;
+}
+
+.menu-container {
+  width: 350px;
+  background-color: white;
+  border-right: 4px solid black;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.menu-button {
+  width: 100%;
+  height: 60px;
+  border: 3px solid black;
+  background-color: white;
+  margin: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.menu-button:hover {
+  transform: scale(1.02);
+  background-color: #e6e6e6;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.arrow-box {
+  width: 60px;
+  height: 60px;
+  border: 3px solid black;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  background-color: white;
+}

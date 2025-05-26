@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+a.back-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a.back-button:hover {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #2980b9;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+button {
+  padding: 6px 12px;
+  margin: 0 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  background-color: #3498db;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:nth-child(2) {
+  background-color: #e67e22;
+}
+
+button:nth-child(2):hover {
+  background-color: #d35400;
+}
+
+button:nth-child(3) {
+  background-color: #e74c3c;
+}
+
+button:nth-child(3):hover {
+  background-color: #c0392b;
+}

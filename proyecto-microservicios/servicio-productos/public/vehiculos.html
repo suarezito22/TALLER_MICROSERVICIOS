@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Vehículos</title>
+  <link rel="stylesheet" href="css/vehiculos.css">
+  <script src="js/vehiculos.js" defer></script>
+</head>
+
+<body>
+
+  <a href="index.html">
+    <button class="menu-button">Volver al Menú</button>
+  </a>
+
+  <h1>Gestión de Vehículos</h1>
+
+  <form id="formVehiculo">
+    <input type="text" name="marca" placeholder="Marca" required>
+    <input type="text" name="modelo" placeholder="Modelo" required>
+    <input type="number" name="anio" placeholder="Año" required>
+    <input type="text" name="categoria" placeholder="Categoría" required>
+    <select name="estado" required>
+      <option value="disponible">Disponible</option>
+      <option value="alquilado">Alquilado</option>
+      <option value="mantenimiento">Mantenimiento</option>
+    </select>
+    <button type="submit">Registrar Vehículo</button>
+  </form>
+
+  <h2>Listado de Vehículos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Año</th>
+        <th>Categoría</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody id="tablaVehiculos"></tbody>
+  </table>
+
+</body>
+</html>
