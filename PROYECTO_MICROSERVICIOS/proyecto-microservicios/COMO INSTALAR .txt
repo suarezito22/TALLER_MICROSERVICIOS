@@ -1,0 +1,16 @@
+PARA INICIAR 
+
+1.  Cd C:\Users\byxpo\Documents\PROYECTO_MICROSERVICIOS\proyecto-microservicios
+
+2. php artisan serve
+
+3. http://127.0.0.1:8000/index.html
+
+
+
+RECORDAR INSTALAR POSTMAN 
+
+RECORDAR EXPORTAR LA BASE DE DATOS DE XAMP 
+
+RECORDAR DESCARGAR E INSTALAR LARAVEL
+
