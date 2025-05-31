@@ -1,15 +1,20 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f4f8;
+  background-image: url('../Recursos/fondo_reportes.webp'); 
+  background-size: cover;         
+  background-position: center;     
+  background-repeat: no-repeat;    
   margin: 0;
   padding: 20px;
   color: #333;
+  min-height: 100vh;               
+  box-sizing: border-box;
 }
 
 .container {
   max-width: 1100px;
   margin: auto;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95); 
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -31,13 +36,17 @@ h1 {
 
 .filtros label {
   font-weight: bold;
+  color: #2c3e50;
 }
 
 .filtros select, .filtros button {
-  padding: 6px 12px;
+  padding: 8px 14px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  outline: none;
+  font-weight: normal;
+  transition: all 0.3s ease;
 }
 
 .filtros button {
@@ -45,6 +54,7 @@ h1 {
   color: white;
   cursor: pointer;
   border: none;
+  font-weight: bold;
 }
 
 .filtros button:hover {
@@ -81,8 +91,14 @@ a.back-button {
   color: #2980b9;
   text-decoration: none;
   font-weight: bold;
+  padding: 8px 14px;
+  border: 2px solid #2980b9;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 a.back-button:hover {
-  text-decoration: underline;
+  background-color: #2980b9;
+  color: white;
+  text-decoration: none;
 }

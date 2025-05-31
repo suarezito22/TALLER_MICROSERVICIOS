@@ -1,30 +1,55 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f9fafa;
+  background-image: url('../Recursos/fondo_vehiculos_disponibles.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   margin: 0;
-  padding: 20px;
+  padding: 0;
   color: #2c3e50;
+  min-height: 100vh;
+}
+
+a.back-button {
+  margin: 20px;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: rgba(31, 97, 141, 0.6);
+  padding: 8px 15px;
+  border: 2px solid white;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+a.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
 }
 
 .container {
   max-width: 1000px;
-  margin: auto;
-  background: #ffffff;
+  margin: 40px auto;
+  background-color: rgba(255, 255, 255, 0.95);
   padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  border: 3px solid white;
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
-  margin-bottom: 20px;
   color: #1f618d;
+  margin-bottom: 20px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  background-color: white;
 }
 
 th, td {
@@ -44,16 +69,4 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #d6eaf8;
-}
-
-a.back-button {
-  text-decoration: none;
-  color: #2980b9;
-  font-weight: bold;
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
-a.back-button:hover {
-  text-decoration: underline;
 }

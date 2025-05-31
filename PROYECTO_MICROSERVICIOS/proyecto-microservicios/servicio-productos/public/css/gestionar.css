@@ -1,85 +1,78 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
+  background-image: url('../Recursos/fondo_vehiculo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin: 0;
-  padding: 20px;
-  color: #333;
-}
-
-.container {
-  max-width: 1000px;
-  margin: auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2 {
-  text-align: center;
-  color: #2c3e50;
+  padding: 0;
 }
 
 a.back-button {
+  margin: 20px;
   display: inline-block;
-  margin-bottom: 20px;
-  color: #2980b9;
   text-decoration: none;
+  color: #fff;
+  background-color: rgba(45, 141, 215, 0.6);
+  padding: 8px 15px;
+  border: 2px solid white;
+  border-radius: 6px;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 a.back-button:hover {
-  text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.93);
+  padding: 30px;
+  max-width: 1000px;
+  margin: 20px auto 40px auto;
+  border: 3px solid rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+h1.titulo {
+  background-color: rgba(24, 90, 182, 0.847);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin: 0;
+  font-size: 26px;
+  border-bottom: 3px solid white;
+}
+
+h2.titulo {
+  text-align: center;
+  margin: 40px auto 20px auto;
+  color: white;
+  background-color: rgba(246, 245, 245, 0.942);
+  padding: 10px;
+  width: fit-content;
+  border-radius: 6px;
+  font-size: 22px;
+  border: 2px solid white;
 }
 
 table {
-  width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
 }
 
 th, td {
-  padding: 12px;
+  border: 1px solid #999;
+  padding: 10px;
   text-align: center;
-  border: 1px solid #ddd;
 }
 
 th {
   background-color: #2980b9;
   color: white;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-button {
-  padding: 6px 12px;
-  margin: 0 2px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  color: white;
-  font-weight: bold;
-  background-color: #3498db;
-}
-
-button:hover {
-  background-color: #2980b9;
-}
-
-button:nth-child(2) {
-  background-color: #e67e22;
-}
-
-button:nth-child(2):hover {
-  background-color: #d35400;
-}
-
-button:nth-child(3) {
-  background-color: #e74c3c;
-}
-
-button:nth-child(3):hover {
-  background-color: #c0392b;
 }

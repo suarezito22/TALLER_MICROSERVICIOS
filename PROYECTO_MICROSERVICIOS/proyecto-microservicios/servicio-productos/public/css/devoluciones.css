@@ -1,47 +1,68 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
+  background-image: url('../Recursos/fondo_devoluciones.webp');
+  background-size: cover;         
+  background-position: center;    
+  background-repeat: no-repeat;   
+  background-attachment: fixed;   
   margin: 0;
   padding: 20px;
   color: #333;
+  min-height: 100vh;              
+}
+
+
+a.back-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: white;
+  background-color: rgba(45, 141, 215, 0.6);
+  padding: 8px 15px;
+  border: 2px solid white;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+a.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
 }
 
 .container {
   max-width: 1000px;
   margin: auto;
-  background: #fff;
+  background-color: rgba(255, 255, 255, 0.93);
   padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  border: 3px solid rgba(0, 0, 0, 0.6);
+  color: #333;
 }
 
 h1 {
   text-align: center;
-  color: #2c3e50;
-}
-
-a.back-button {
-  display: inline-block;
-  margin-bottom: 20px;
-  color: #2980b9;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a.back-button:hover {
-  text-decoration: underline;
+  color: rgba(24, 90, 182, 0.847);
+  font-size: 26px;
+  margin: 0 0 20px 0;
+  border-bottom: 3px solid white;
+  padding-bottom: 10px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
 }
 
 th, td {
   padding: 12px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid #999;
 }
 
 th {
@@ -56,11 +77,12 @@ tr:nth-child(even) {
 button {
   padding: 6px 12px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   color: white;
   font-weight: bold;
   background-color: #27ae60;
+  transition: background-color 0.3s;
 }
 
 button:hover {

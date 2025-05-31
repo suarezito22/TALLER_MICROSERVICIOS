@@ -1,6 +1,8 @@
 PARA INICIAR 
 
-1. cd ./PROYECTO_MICROSERVICIOS/proyecto-microservicios/servicio-productos
+1. cd ./proyecto-microservicios/servicio-productos
+
+
 
 2. php artisan serve
 
@@ -13,4 +15,7 @@ RECORDAR INSTALAR POSTMAN
 RECORDAR EXPORTAR LA BASE DE DATOS DE XAMP 
 
 RECORDAR DESCARGAR E INSTALAR LARAVEL
+
+
+
 
